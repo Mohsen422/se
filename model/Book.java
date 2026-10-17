@@ -1,0 +1,94 @@
+package ap.projects.finalproject.model;
+
+import ap.projects.finalproject.util.IdGen;
+
+public class Book {
+    private int id;
+    private String title, author, publicationDate, isbn;
+    private boolean isAvailable;
+    private long pages;
+
+    public Book(String title, String author, String publicationDate, String isbn,long pages) {
+        this.title = title;
+        this.author = author;
+        this.publicationDate = publicationDate;
+        this.isbn = isbn;
+        this.pages = pages;
+        this.isAvailable = true;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public long getPages() {
+        return this.pages;
+    }
+
+    public String getPublicationDate() {
+        return this.publicationDate;
+    }
+
+    public void setTitle(String name) {
+        this.title = name;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublicationDate(String publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    public void setPages(long pages) {
+        this.pages = pages;
+    }
+
+    @Override
+    public String toString() {
+        return "======================================\nTitle: " + this.title + "  ||  author: " + this.author +
+                "  ||  Year: " + this.publicationDate + "  ||  ISBN: " + this.isbn + "  ||  IsAvailable: " + this.isAvailable;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        Book book = (Book) obj;
+        if (this.isAvailable == book.isAvailable && this.title.equals(book.getTitle()) && this.author.equals(book.getAuthor()) &&
+        this.isbn.equals(book.getIsbn()) && this.pages == book.getPages()) {
+            return true;
+        }
+        return false;
+    }
+}
